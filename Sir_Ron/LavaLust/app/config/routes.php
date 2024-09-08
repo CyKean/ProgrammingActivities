@@ -44,4 +44,18 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 |
 */
 
-$router->get('/', 'Welcome::index');
+$router->get('/home', 'Welcome::index');
+
+$router->get('/', 'Product::show');
+$router->get('/add', 'Product::add');
+$router->get('/edit/{id}', 'Product::edit');
+
+
+$router->post('/insert', 'Product::insert');
+$router->post('/delete/{id}', 'Product::delete');
+$router->post('/update/{id}', 'Product::update');
+
+
+
+// $route['insert/:any'] = 'Product/insert';
+// $route['delete/{id}'] = 'Product/delete';
