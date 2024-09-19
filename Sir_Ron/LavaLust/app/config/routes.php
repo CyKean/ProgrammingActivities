@@ -46,16 +46,17 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
 $router->get('/home', 'Welcome::index');
 
-$router->get('/', 'Product::show');
-$router->get('/add', 'Product::add');
-$router->get('/edit/{id}', 'Product::edit');
+$router->get('/', 'User::show');
+$router->get('/user/add', 'User::add');
+$router->get('/user/edit/{id}', 'User::edit');
+$router->get('/user/search', 'User::search');
 
 
-$router->post('/insert', 'Product::insert');
-$router->post('/delete/{id}', 'Product::delete');
-$router->post('/update/{id}', 'Product::update');
+$router->post('/insert', 'User::insert');
+$router->post('/delete/{id}', 'User::delete');
+$router->post('/user/update/{id}', 'User::update');
+$router->post('/user/search', 'User::search');
 
-
-
+// $route['search'] = 'User/show';
 // $route['insert/:any'] = 'Product/insert';
 // $route['delete/{id}'] = 'Product/delete';

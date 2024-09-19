@@ -1,38 +1,86 @@
-<?php
-defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
-include 'src/include.php'
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
+    <title>Add User</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .form-label {
+            font-weight: 600;
+        }
+        .cancel {
+            text-decoration: none;
+            color: #ff0000;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .cancel:hover {
+            text-decoration: underline;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            font-weight: 600;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <div class="bg-green-100 flex justify-center content-center h-full">
-        <div class="flex flex-col bg-white h-auto m-auto p-3 rounded-md shadow">
-            <a href="/" class="bg-red-300 p-1 rounded-md text-center text-red-500 hover:bg-red-200 hover:text-red-800">cancel</a>
-            <h2 class="text-green-500 text-xl font-semibold text-center mb-2">
-                Product Details
-            </h2>
+
+    <div class="container">
+        <div class="card shadow-sm">
+            <div class="card-body">
+            <h2 class="mb-4">Add User</h2>
+            <a href="/" class="cancel">Cancel</a>
 
             <form action="/insert" method="POST">
-                <label for="" class="text-sm">Product Name</label><br>
-                <input type="text" name="product_name" class="border rounded-md p-2 mb-2"><br>
+                <div class="mb-3">
+                    <label for="last_name" class="form-label">Last Name</label>
+                    <input type="text" name="last_name" class="form-control" required>
+                </div>
 
-                <label for="" class="text-sm">Product Description</label><br>
-                <textarea type="text" name="product_description" class="border rounded-md p-2 mb-2"></textarea><br>
+                <div class="mb-3">
+                    <label for="first_name" class="form-label">First Name</label>
+                    <input type="text" name="first_name" class="form-control" required>
+                </div>
 
-                <label for="" class="text-sm">Product Price</label><br>
-                <input type="number" name="product_price" class="border rounded-md p-2 mb-2"><br>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" required>
+                </div>
 
-                <label for="" class="text-sm">Product Quantity</label><br>
-                <input type="number" name="product_quantity" class="border rounded-md p-2 mb-2"><br>
+                <div class="mb-3">
+                    <label for="gender" class="form-label">Gender</label>
+                    <input type="text" name="gender" class="form-control" required>
+                </div>
 
-                <button type="submit" class="text-center w-full bg-green-400 p-1 rounded-md">Add</button>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" name="address" class="form-control" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Add</button>
             </form>
+            </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
