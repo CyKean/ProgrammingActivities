@@ -93,6 +93,7 @@ class User extends Controller {
         }
 
         $this->call->view('user');
+
     }
 
     public function search(){

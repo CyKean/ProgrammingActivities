@@ -32,7 +32,7 @@
         .pagination li {
             margin: 0 5px;
         }
-        th , td{
+        th, td {
             text-align: center;
         }
     </style>
@@ -63,12 +63,11 @@
                 </div>
 
                 <script>
-                    setTimeout(function() {
-                        let notificationMessages = document.querySelectorAll('.notifications');
-                        notificationMessages.forEach(function(message) {
-                            message.style.display = 'none';
-                        });
-                    }, 2000); 
+                    $(document).ready(function() {
+                        setTimeout(function() {
+                            $('.notifications').fadeOut('slow');
+                        }, 2000);
+                    });
                 </script>
             <?php endif; ?>
 
@@ -77,7 +76,6 @@
             <table class="table table-striped table-hover">
                 <thead class="table-dark">
                     <tr>
-                        <!-- <th>ID</th> -->
                         <th>Last Name</th>
                         <th>First Name</th>
                         <th>Email</th>
@@ -90,7 +88,6 @@
                     <tbody>
                         <?php foreach($result as $row): ?>
                         <tr>
-                            <!-- <td><?= $row['id']; ?></td> -->
                             <td><?= $row['crp_last_name']; ?></td>
                             <td><?= $row['crp_first_name']; ?></td>
                             <td><?= $row['crp_email']; ?></td>
@@ -132,6 +129,7 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
